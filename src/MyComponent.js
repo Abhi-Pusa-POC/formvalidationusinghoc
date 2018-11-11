@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import Form from './Form';
+// import Form from './Form';
 
 class MyComponent extends Component{
     constructor(){
@@ -20,7 +20,7 @@ class MyComponent extends Component{
         console.log("all props ",this.props);
         return(
             <div>
-                <Form submit={this._onClickHandler} {...this.props}>
+                {/* <Form submit={this._onClickHandler} {...this.props}> */}
                     <div>
                      <input ref="username" type="text" placeholder="enter username" required ></input><br />
                      <span className="invalid-feedback"></span>
@@ -46,7 +46,7 @@ class MyComponent extends Component{
                      <span className="invalid-feedback"></span>
                     </div>
                     <button type="submit">Submit</button>
-                </Form>
+                {/* </Form> */}
             </div>
         )
     }
