@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import higherOrderComponent from './higherordercomponent';
+import MyComponent from './MyComponent';
+import MyComponent2 from './MyComponent2';
+
+const SimpleHOC = higherOrderComponent(MyComponent);
+const SimpleHOC1 = higherOrderComponent(MyComponent2);
 
 class App extends Component {
   render() {
@@ -19,6 +25,8 @@ class App extends Component {
           >
             Learn React
           </a>
+          <SimpleHOC props={{data1:"london",data2:"wall"}}/>
+          <SimpleHOC1 props={{data1:"upton",data2:"park"}}/>
         </header>
       </div>
     );
