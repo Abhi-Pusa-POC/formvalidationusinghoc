@@ -1,11 +1,26 @@
-import React,{Component} from 'react';
+import React,{Component , PropTypes} from 'react';
 // import Form from './Form';
 
 class MyComponent extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this._onClickHandler = this._onClickHandler.bind(this);
+        this._onChangeHandler = this._onChangeHandler.bind(this);
+
+        console.log("props",props);
+        this.state = {name :""};
     }
+    
+    // static propTypes = { 
+    //       theme: "secondary",
+    //       label: "Button Text"
+    // };
+    _onChangeHandler(e){
+        this.setState({
+           name : e.target.value
+        })
+    }
+
     _onClickHandler(){
         console.log("refs details in the page", this.refs.username["type"]);
         for(var key in this.refs){
@@ -22,7 +37,7 @@ class MyComponent extends Component{
             <div>
                 {/* <Form submit={this._onClickHandler} {...this.props}> */}
                     <div>
-                     <input ref="username" type="text" placeholder="enter username" required ></input><br />
+                     <input  value={this.state.name} ref="username" type="text" onChange={this._onChangeHandler} placeholder="enter username" required ></input><br />
                      <span className="invalid-feedback"></span>
                     </div>
                     <div>

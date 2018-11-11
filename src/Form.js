@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './Form.less';
 
+
 const FormHigherOrderComponent = (WrapperComponent) => {
     class Form extends Component {
         state = {
@@ -44,7 +45,7 @@ const FormHigherOrderComponent = (WrapperComponent) => {
     
         submitHandler = (event) => {
             event.preventDefault();
-    
+            console.log("neelam",this.home.state);
             if (this.validate()) {
                 this.props.submit();
             }
@@ -68,7 +69,7 @@ const FormHigherOrderComponent = (WrapperComponent) => {
             return (
                 <form ref={form => this.formEl = form} onSubmit={this.submitHandler} noValidate>
                     {/* {this.props.children} */}
-                    <WrapperComponent />
+                    <WrapperComponent ref={(c) => this.home = c}/>
                 </form>
             );
         }

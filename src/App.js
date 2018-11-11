@@ -5,6 +5,7 @@ import './App.css';
 import MyComponent from './MyComponent';
 // import MyComponent2 from './MyComponent2';
 import formHighOrderComponent from './Form';
+import PropTypesValidation from './PropTypesValid';
 
 // const SimpleHOC = higherOrderComponent(MyComponent);
 // const SimpleHOC1 = higherOrderComponent(MyComponent2);
@@ -22,8 +23,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+        <header>
+          {/* <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -34,10 +35,11 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
-          </a>
+          </a> */}
           {/* <SimpleHOC props={{data1:"london",data2:"wall"}}/>
           <SimpleHOC1 props={{data1:"upton",data2:"park"}}/> */}
-          <ValidateComponent submit={this.onSubmitHandler} props={{data1:"london",data2:"wall"}} />
+          {/* <ValidateComponent submit={this.onSubmitHandler} props={{data1:"london",data2:"wall"}} /> */}
+          <PropTypesValidation />
         </header>
       </div>
     );
