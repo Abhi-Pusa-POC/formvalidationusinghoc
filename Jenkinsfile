@@ -11,9 +11,14 @@ pipeline{
                 echo "testing is going on"
             }
         }
-        stage('deployment'){
+        stage('sonarcheck'){
             steps{
-                echo "code deploymenyt is going on"
+                echo "sonar check started that helps in getting the things a cool outlet"
+            }
+        }
+        stage('UCDdeployment'){
+            steps{
+                echo "ucd deployment started"
             }
         }
     }
