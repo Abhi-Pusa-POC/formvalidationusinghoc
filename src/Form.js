@@ -16,6 +16,7 @@ const FormHigherOrderComponent = (WrapperComponent) => {
                 for(let i=0; i<formLength; i++) {
                     const elem = this.formEl[i];
                     console.log("abhinav",elem);
+                    console.log("abhinav is good boy");
                     const errorLabel = elem.parentNode.querySelector('.invalid-feedback');
                     console.log("error label",errorLabel);
                     if (errorLabel && elem.nodeName.toLowerCase() !== 'button') {
